@@ -1,9 +1,13 @@
-FROM        python:2.7
-MAINTAINER  Markus Suonto
+FROM        ubuntu:14.04
+MAINTAINER  Janos Liebe
 
-COPY        demoserver /opt/demoserver
-RUN         chmod 744 /opt/demoserver/server.py
+RUN         apt-get update
+RUN         apt-get install -y git
+RUN         apt-get install -y python
+
+RUN         git clone https://github.com/JanosLiebe/DevOps-webserver.git /opt
+RUN         chmod 744 /opt/DevOps-webserver/demoserver/server.py
 
 EXPOSE      8082
 
-ENTRYPOINT  ["/opt/demoserver/server.py"]
+ENTRYPOINT  ["/opt/DevOps-webserver/demoserver/server.py"]
