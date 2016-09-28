@@ -20,7 +20,7 @@ from SimpleHTTPServer import SimpleHTTPRequestHandler
 
 
 ROOT = join(dirname(abspath(__file__)), 'html')
-PORT = 8082
+PORT = 7272
 
 
 class DemoServer(TCPServer):
